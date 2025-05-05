@@ -14,6 +14,21 @@ services:
       - postgres_data:/var/lib/postgresql/data # Persist data
     restart: unless-stopped
 
+  chroma:
+    image: chromadb/chroma:latest # Use the official ChromaDB image
+    container_name: boardgame_rag_chroma
+    environment:
+      - ALLOW_RESET=true # Allows resetting the database via the API if needed
+      - IS_PERSISTENT=true # Ensure data is persisted within the volume
+      - CHROMA_SERVER_HOST=0.0.0.0 # Bind to all interfaces within the container
+    ports:
+      - "8000:8000" # Map container port 8000 to host port 8000
+    volumes:
+      - chroma_data:/chroma/chroma # Persist Chroma data
+    restart: unless-stopped
+
 volumes:
   postgres_data:
+    driver: local
+  chroma_data:
     driver: local

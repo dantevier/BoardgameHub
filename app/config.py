@@ -15,7 +15,8 @@ class Settings(BaseSettings):
     
     # Vector DB Configuration (Example)
     VECTOR_DB_TYPE: str = os.getenv("VECTOR_DB_TYPE", "chroma")
-    VECTOR_DB_PATH: str | None = os.getenv("VECTOR_DB_PATH", os.path.join(BASE_DIR, "vector_store"))
+    CHROMA_HOST: str = os.getenv("CHROMA_HOST", "localhost")
+    CHROMA_PORT: int = int(os.getenv("CHROMA_PORT", "8000"))
     
     # Embedding Model
     EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
