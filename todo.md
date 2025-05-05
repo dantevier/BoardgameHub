@@ -5,9 +5,9 @@ This list outlines the steps to build the Board Game Rule Master web application
 ## Phase 1: Backend Setup and Core Functionality
 
 1.  **Set up Backend Environment:**
-    * [ ] Choose a Python framework (Flask or FastAPI).
-    * [ ] Initialize the project structure.
-    * [ ] Set up virtual environment and install necessary dependencies (e.g., Flask/FastAPI, database connector, vector database client, PDF processing library).
+    * [X] Choose a Python framework (Flask or FastAPI).
+    * [X] Initialize the project structure.
+    * [X] Set up virtual environment and install necessary dependencies (e.g., Flask/FastAPI, database connector, vector database client, PDF processing library).
 
 2.  **Database Design and Setup:**
     * [ ] Design the relational database schema (games, rulebooks, users - if applicable initially, chat history).
