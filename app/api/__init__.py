@@ -1,11 +1,14 @@
 from fastapi import APIRouter
 
-# Import individual routers here (e.g., from .endpoints import games)
+# Import the V1 router
+from app.api.v1.api import api_router as api_v1_router
 
 api_router = APIRouter()
 
-# Include individual routers here
-# api_router.include_router(games.router, prefix="/games", tags=["games"])
+# Include the V1 router (prefix is handled in main.py)
+api_router.include_router(api_v1_router)
+
+# Include other top-level or version-agnostic routers here if needed
 
 # Placeholder for future routes
 @api_router.get("/ping")
