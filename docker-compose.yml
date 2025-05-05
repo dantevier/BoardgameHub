@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15 # You can choose a specific version if needed
+    container_name: boardgame_rag_db
+    environment:
+      POSTGRES_USER: boardgame_rag
+      POSTGRES_PASSWORD: boardgame_rag
+      POSTGRES_DB: boardgame_rag
+    ports:
+      - "5432:5432" # Map container port 5432 to host port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persist data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local

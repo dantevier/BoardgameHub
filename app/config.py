@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     
     # Database configuration (Example using environment variables)
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./app.db") # Use async sqlite driver
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql+asyncpg://boardgame_rag:boardgame_rag@localhost:5432/boardgame_rag") # Use async PostgreSQL driver
     
     # Vector DB Configuration (Example)
     VECTOR_DB_TYPE: str = os.getenv("VECTOR_DB_TYPE", "chroma")
